@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static from staticfiles %}
+        <title>Super chart</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'new.css' %}" >
+        <script src="{% static 'new.js' %}" ></script>
+        <script >
+            var a = "{% autoescape off %}{{chartValues}}{% endautoescape %}";
+            a =  JSON.parse(a)
+        </script>
+    </head>
+    <body>
+        <br><br>
+        <h1>Super chart</h1>
+        <div class = "card-section card-3">
+        <div class = "hitBox" onclick = "toggleOpen.call(this.parentNode)">dsfsd <hr></div>
+        <div class = "card-content">
+        <canvas id = "chart1" class = "lc-body"></canvas>
+        </div>
+        </div>
+    </body>
+</html>
